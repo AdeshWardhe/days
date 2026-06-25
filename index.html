@@ -1,138 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Days</title>
-
-    <link rel="stylesheet" href="css/style.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Days — A Personal Library</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
-
 <body>
 
-    <!-- HERO SECTION -->
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor__dot" id="cursorDot"></div>
+  <div class="cursor__ring" id="cursorRing"></div>
 
-    <section class="hero">
+  <!-- SCROLL PROGRESS BAR -->
+  <div class="scroll-progress" id="scrollProgress"></div>
 
-        <!-- STARS -->
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav__logo">
+      <span class="nav__logo-plus">+</span> Days
+    </div>
+    <ul class="nav__links">
+      <li><a href="#" class="nav__link active">Home</a></li>
+      <li><a href="#" class="nav__link">Library</a></li>
+      <li><a href="#" class="nav__link">About</a></li>
+      <li><a href="#" class="nav__link">Journal</a></li>
+    </ul>
+    <a href="#" class="btn btn--nav">Enter Library →</a>
+  </nav>
 
-        <div class="stars">
-            <span class="star s1"></span>
-            <span class="star s2"></span>
-            <span class="star s3"></span>
-            <span class="star s4"></span>
-            <span class="star s5"></span>
-            <span class="star s6"></span>
-            <span class="star s7"></span>
-            <span class="star s8"></span>
-        </div>
-
-        <!-- NAVBAR -->
-
-        <nav class="navbar">
-
-            <div class="logo">
-                DAYS
-            </div>
-
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Moments</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Stories</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-
-            <button class="cta-btn">
-                Start Writing →
-            </button>
-
-        </nav>
-
-        <!-- HERO CONTENT -->
-
-        <div class="hero-content">
-
-            <!-- LEFT SIDE -->
-
-            <div class="hero-left">
-
-                <p class="eyebrow">
-                    The Days Project
-                </p>
-
-                <h1>
-                    Thoughts today,
-                    <span>memories forever.</span>
-                </h1>
-
-                <p class="hero-description">
-                    A place for thoughts, memories, ideas,
-                    stories, lessons and everything worth
-                    remembering.
-                </p>
-
-                <button class="hero-btn">
-                    Explore Days →
-                </button>
-
-            </div>
-
-            <!-- RIGHT SIDE -->
-
-            <div class="hero-right">
-
-                <div class="portal-container">
-
-    <div class="portal-top"></div>
-
-    <div class="portal">
-        <div class="portal-inner"></div>
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero__stars" id="heroStars"></div>
+    <div class="hero__bg-shapes">
+      <div class="hero__shape hero__shape--1"></div>
+      <div class="hero__shape hero__shape--2"></div>
+      <div class="hero__shape hero__shape--3"></div>
     </div>
 
-    <!-- PARTICLES -->
-    <div class="particle p1"></div>
-    <div class="particle p2"></div>
-    <div class="particle p3"></div>
-    <div class="particle p4"></div>
-    <div class="particle p5"></div>
-
-    <!-- SHADOW -->
-    <div class="portal-shadow"></div>
-
-    <div class="platform"></div>
-
-    <div class="stairs">
-        <div class="step step1"></div>
-        <div class="step step2"></div>
-        <div class="step step3"></div>
-        <div class="step step4"></div>
-        <div class="step step5"></div>
+    <div class="hero__content">
+      <p class="hero__eyebrow reveal-up">A Personal Digital Library</p>
+      <h1 class="hero__headline reveal-up delay-1">
+        <span id="typewriterText"></span><span class="typewriter__cursor">|</span><br />
+        <em class="hero__italic">legacy</em> tomorrow.
+      </h1>
+      <p class="hero__sub reveal-up delay-2">
+        A place for ideas, poems, lessons, and everything that shapes who I am.
+      </p>
+      <a href="#" class="btn btn--hero reveal-up delay-3">Explore My Library →</a>
     </div>
 
-</div>
+    <div class="hero__door reveal-scale delay-2">
+      <img
+        src="assets/hero-arch.webp"
+        alt="A cosmic arch with flowers, dark hills and a starry purple sky"
+        class="hero__door-img"
+      />
+    </div>
 
-            </div>
+    <div class="hero__wave">
+      <svg viewBox="0 0 1440 160" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,80 C240,160 480,20 720,90 C900,145 1100,30 1300,80 C1370,100 1410,95 1440,90 L1440,160 L0,160 Z" fill="#F5F0EA"/>
+      </svg>
+    </div>
 
+    <div class="hero__scroll-hint">↓</div>
+  </section>
+
+  <!-- WHY SECTION -->
+  <section class="why" id="why">
+    <div class="why__container">
+      <div class="why__text reveal-left">
+        <h2 class="why__headline">
+          Why I built<br />
+          <em class="why__italic">this library?</em>
+        </h2>
+        <p class="why__body">
+          To capture the things that matter.<br />
+          To slow down, reflect, and create.<br />
+          To build a legacy of learning and creativity<br />
+          that I can look back on years from now.
+        </p>
+        <p class="why__sign">
+          <span class="why__squiggle">～</span>
+          This is for me.<br />
+          This is for the future me.
+        </p>
+      </div>
+      <div class="why__visual reveal-right">
+        <div class="why__sculpture">
+          <div class="sculpture__hand">☽</div>
+          <div class="sculpture__platform">
+            <div class="sculpt-item sculpt-dark-tri"></div>
+            <div class="sculpt-item sculpt-teal-tri"></div>
+            <div class="sculpt-item sculpt-orange"></div>
+            <div class="sculpt-item sculpt-yellow"></div>
+          </div>
+          <div class="sculpture__base"></div>
         </div>
+      </div>
+    </div>
+  </section>
 
-    </section>
+  <!-- THIS IS WHERE ACCORDION -->
+  <section class="where" id="where">
+    <div class="where__label">
+      <span>This is where...</span>
+    </div>
+    <div class="where__items">
 
-    <!-- FUTURE SECTIONS -->
+      <div class="where__item where__item--purple reveal-up">
+        <button class="where__toggle">
+          <span>...I write my thoughts</span>
+          <span class="where__icon">+</span>
+        </button>
+        <div class="where__body">
+          <p>Raw journal entries, half-formed ideas, 3am realisations — all of it lives here. Unfiltered, unpolished, honest.</p>
+        </div>
+      </div>
 
-    <!-- WHY DAYS -->
-    <!-- MEMORY WALL -->
-    <!-- QUOTES -->
-    <!-- MOMENTS -->
-    <!-- FOOTER -->
+      <div class="where__item where__item--pink reveal-up delay-1">
+        <button class="where__toggle">
+          <span>...I turn lessons into lifelong wisdom</span>
+          <span class="where__icon">+</span>
+        </button>
+        <div class="where__body">
+          <p>Tech notes, life lessons, hard-won knowledge from MMA, from projects, from reading. Captured before they fade.</p>
+        </div>
+      </div>
 
-    <script src="js/main.js"></script>
+      <div class="where__item where__item--orange reveal-up delay-2">
+        <button class="where__toggle">
+          <span>...I create, imagine and express freely</span>
+          <span class="where__icon">+</span>
+        </button>
+        <div class="where__body">
+          <p>Poems, paintings, wild ideas. The creative side that doesn't need a reason to exist — it just does.</p>
+        </div>
+      </div>
 
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="quote" id="quote">
+    <div class="quote__inner">
+      <div class="quote__container reveal-up">
+        <div class="quote__mark">"</div>
+        <blockquote class="quote__text">
+          Ideas live forever here. Not just as words, but as pieces of me.
+          A library of moments, mistakes, lessons, and dreams.
+          This is my world. Welcome to it.
+        </blockquote>
+        <cite class="quote__author">— Adesh Wardhe</cite>
+      </div>
+      <div class="quote__plant reveal-right delay-2">
+        <div class="plant__leaves">
+          <div class="plant__leaf plant__leaf--1"></div>
+          <div class="plant__leaf plant__leaf--2"></div>
+          <div class="plant__leaf plant__leaf--3"></div>
+        </div>
+        <div class="plant__pot"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIBRARY CATEGORIES -->
+  <section class="library" id="library">
+    <h2 class="library__headline reveal-up">
+      Inside my <em class="library__italic">library,</em> you'll find
+    </h2>
+
+    <div class="library__grid">
+      <div class="library__card reveal-up delay-1">
+        <div class="library__card-img card--poems">
+          <span class="card__emoji">✍️</span>
+        </div>
+        <div class="library__card-body">
+          <h3>Poems</h3>
+          <p>23 Chapters</p>
+        </div>
+      </div>
+
+      <div class="library__card reveal-up delay-2">
+        <div class="library__card-img card--tech">
+          <span class="card__emoji">💻</span>
+        </div>
+        <div class="library__card-body">
+          <h3>Tech Notes</h3>
+          <p>48 Chapters</p>
+        </div>
+      </div>
+
+      <div class="library__card reveal-up delay-3">
+        <div class="library__card-img card--mma">
+          <span class="card__emoji">🥊</span>
+        </div>
+        <div class="library__card-body">
+          <h3>MMA Journal</h3>
+          <p>19 Chapters</p>
+        </div>
+      </div>
+
+      <div class="library__card reveal-up delay-1">
+        <div class="library__card-img card--paintings">
+          <span class="card__emoji">🎨</span>
+        </div>
+        <div class="library__card-body">
+          <h3>Paintings</h3>
+          <p>31 Chapters</p>
+        </div>
+      </div>
+
+      <div class="library__card reveal-up delay-2">
+        <div class="library__card-img card--thoughts">
+          <span class="card__emoji">💭</span>
+        </div>
+        <div class="library__card-body">
+          <h3>Random Thoughts</h3>
+          <p>50+ Chapters</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="library__cta reveal-up delay-3">
+      <a href="#" class="btn btn--dark">Browse Library →</a>
+    </div>
+  </section>
+
+  <!-- FOOTER CTA -->
+  <section class="footer-cta" id="footerCta">
+    <div class="footer-cta__wave-top">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,40 C300,80 600,0 900,40 C1100,65 1300,20 1440,40 L1440,0 L0,0 Z" fill="#F5F0EA"/>
+      </svg>
+    </div>
+    <div class="footer-cta__content reveal-up">
+      <h2>Ready to explore<br /><em>my world?</em></h2>
+      <p>Step into the library and read, reflect, and feel.</p>
+      <a href="#" class="btn btn--outline">Enter Library Now →</a>
+    </div>
+    <div class="footer-cta__arch">
+      <div class="footer-cta__arch-inner"></div>
+    </div>
+    <div class="footer-cta__sun"></div>
+  </section>
+
+  <!-- FOOTER BAR -->
+  <footer class="footer">
+    <p>© 2025 Days. All rights reserved.</p>
+    <p>Built with <span class="footer__heart">♥</span> passion</p>
+  </footer>
+
+  <!-- PAGE TRANSITION OVERLAY -->
+  <div class="page-transition" id="pageTransition"></div>
+
+  <script src="js/main.js"></script>
 </body>
-
 </html>
